@@ -1,0 +1,22 @@
+{
+  "name": "scorebot",
+  "version": "1.0.0",
+  "description": "A Discord score-keeping application",
+  "main": "interactions.js",
+  "scripts": {
+    "test": "ngrok http http://localhost:3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Brian-J-Wang/score-bot.git"
+  },
+  "keywords": [
+    "discord"
+  ],
+  "author": "Brian Wang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Brian-J-Wang/score-bot/issues"
+  },
+  "homepage": "https://github.com/Brian-J-Wang/score-bot#readme"
+}
