@@ -2,9 +2,11 @@
   "name": "scorebot",
   "version": "1.0.0",
   "description": "A Discord score-keeping application",
+  "type": "module",
   "main": "interactions.js",
   "scripts": {
-    "test": "ngrok http http://localhost:3000"
+    "url": "ngrok http http://localhost:3000",
+    "dev": "nodemon --exec npx tsx server.ts"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,11 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
   }
 }

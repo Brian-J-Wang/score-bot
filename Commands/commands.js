@@ -1,17 +1,23 @@
-require('dotenv').config();
+import { register, getCommands } from './register.js';
 
-const commands = require('./register.js');
-
-commands.register({
+register({
     "name": "scoreboard",
     "type": 1,
-    "description": "interface for working with scoreboards"
+    "description": "interface for working with scoreboards",
+    "options": [
+        {
+            "name": "name",
+            "description": "scoreboard name",
+            "type": 3,
+            "max_length": 30
+        }
+    ]
 })
 
-commands.register({
+register({
     "name": "ping",
     "type": 1,
     "description": "test command for interactions"
 })
 
-commands.getCommands();
+getCommands();

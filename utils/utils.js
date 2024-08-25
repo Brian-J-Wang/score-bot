@@ -1,6 +1,4 @@
-require('dotenv').config();
-
-exports.getRequestBody = (req) => {
+const getRequestBody = (req) => {
     return new Promise((resolve) => {
         var body = []
         req.on('data', chunk => {
@@ -12,3 +10,5 @@ exports.getRequestBody = (req) => {
         })
     })
 }
+
+export default getRequestBody;

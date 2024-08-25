@@ -1,10 +1,9 @@
 //handles validating security request headers
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
+import nacl from 'tweetnacl';
 
-const nacl = require('tweetnacl');
-const util = require('../utils/utils.js');
-
-exports.securityHeader = (signature, timestamp, body) => {
+const securityHeader = (signature, timestamp, body) => {
     const isVerified = nacl.sign.detached.verify(
         Buffer.from(timestamp + body),
         Buffer.from(signature, "hex"),
@@ -13,3 +12,5 @@ exports.securityHeader = (signature, timestamp, body) => {
 
     return isVerified ? true : false;
 }
+
+export default securityHeader;

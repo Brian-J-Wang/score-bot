@@ -1,8 +1,9 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 const baseURL = `https://discord.com/api/v10/applications/${process.env.app_id}/commands`;
 
-exports.register = (command) => {
+export function register(command) {
     return fetch(baseURL, {
         method: 'POST',
         headers: {
@@ -24,7 +25,7 @@ exports.register = (command) => {
     });
 }
 
-exports.getCommands = () => {
+export function getCommands() {
     return fetch(baseURL, {
         method: 'GET',
         headers: {
